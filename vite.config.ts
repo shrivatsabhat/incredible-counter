@@ -14,6 +14,7 @@ export default defineConfig({
       "@container": resolve(__dirname, "./src/container"),
       "@assets": resolve(__dirname, "./src/assets"),
       "@styles": resolve(__dirname, "./src/styles"),
+      "@helper": resolve(__dirname, "./src/helper"),
     },
   },
 });

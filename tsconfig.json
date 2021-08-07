@@ -22,7 +22,8 @@
       "@organisms": ["components/organisms"],
       "@container": ["container"],
       "@assets": ["assets"],
-      "@styles": ["styles"]
+      "@styles": ["styles"],
+      "@helper": ["helper"]
     }
   },
   "include": ["./src"]
