@@ -1,0 +1,32 @@
+@import url("../../../styles/index.module.scss");
+
+.circle {
+  width: 100pt;
+  height: 100pt;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+
+  &-center {
+    align-items: center;
+    justify-content: center;
+  }
+  &-top {
+    align-items: flex-start;
+    justify-content: center;
+  }
+  &-top-left {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  &-top-right {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  &-bottom {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}

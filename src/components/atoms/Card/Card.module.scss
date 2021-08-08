@@ -1,0 +1,8 @@
+@import url("../../../styles/index.module.scss");
+
+.card {
+  margin: 1rem;
+  border-radius: 0.4rem;
+  box-shadow: 0rem 0rem 1rem rgba($color: hsl(0, 0%, 0%), $alpha: 0.5);
+  padding: 1rem;
+}
