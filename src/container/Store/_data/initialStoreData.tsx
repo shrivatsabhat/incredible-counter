@@ -1,6 +1,6 @@
 import { Value, Key } from "../Store";
 
-const state = {
+export const _state = {
   counter: 0,
   reset: false,
   range: 1,
@@ -12,7 +12,9 @@ const state = {
   defaultCounter: 'increment'
 }
 
+export const _store = (key: Key, value: Value) => { return { state: true, payload: _state } }
+
 export const _defaultData = {
-  ...state,
-  store: (key: Key, value: Value) => { return { state: true, payload: state } }
+  data: _state,
+  store: _store
 }

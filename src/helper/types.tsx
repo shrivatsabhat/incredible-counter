@@ -8,6 +8,9 @@ export enum DATA_TYPE {
   CUSTOM_STOP = "customStop",
   AUTO_COUNTER_TYPE = "autoCounterType",
   DEFAULT_COUNTER = "defaultCounter",
+}
+
+export enum STORE {
   STORE_DATA = "store"
 }
 
@@ -22,6 +25,6 @@ export const TYPE = {
     CUSTOM_STOP: DATA_TYPE.CUSTOM_STOP,
     AUTO_COUNTER_TYPE: DATA_TYPE.AUTO_COUNTER_TYPE,
     DEFAULT_COUNTER: DATA_TYPE.DEFAULT_COUNTER,
-    STORE_DATA: DATA_TYPE.STORE_DATA
-  }
+  },
+  STORE: STORE.STORE_DATA
 }

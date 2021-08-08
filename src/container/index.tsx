@@ -1,2 +1,2 @@
 export * from "./App";
-export { useStore } from './Store'
+export { useStore, Provider } from './Store'
