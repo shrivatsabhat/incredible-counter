@@ -8,4 +8,3 @@ export const useStore = () => {
 }
 
 export * from './Store'
-export { _storeData as StoreData } from '../Store/_data'
