@@ -1,2 +1,3 @@
 export * from "./App";
-export { useStore, Provider } from './Store'
+export { useStore, Provider } from "./Store";
+export * from "./Router";
