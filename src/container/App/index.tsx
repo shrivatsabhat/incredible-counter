@@ -1,29 +1,81 @@
-import React, { useContext } from 'react'
-import { Button, Text, Card, Circle } from "@atoms"
-import style from './App.module.scss';
-import { CenteralStore, Provider, useStore } from '../Store';
-import { TYPE } from '@helper';
+import React, { Fragment, useEffect } from "react";
+import { Button, Text, Card, Circle } from "@atoms";
+import classes from "./App.module.scss";
+import { useStore } from "../Store";
+import { TYPE } from "@helper";
+import { Increment } from "@molecules";
 
 export const App = () => {
-  const Data = useContext(CenteralStore);
-  const handleIncrement = () => {
-    const c = Data.store(TYPE.DATA.COUNTER, Data.counter + 1)
-    console.log('click', c);
-  }
-  const handleDecrement = () => Data.store(TYPE.DATA.COUNTER, Data.counter - 1)
-  const resetCounter = () => Data.store(TYPE.DATA.COUNTER, 0)
-  const toggleOption = () => Data.store(TYPE.DATA.OPTION, !Data.option)
+  const [data, store] = useStore();
+  const handleIncrement = () => store(TYPE.DATA.COUNTER, data.counter + 1);
+  const handleDecrement = () => store(TYPE.DATA.COUNTER, data.counter - 1);
+  const resetCounter = () => store(TYPE.DATA.COUNTER, 0);
+  const toggleOption = () => store(TYPE.DATA.OPTION, !data.option);
+  useEffect(() => {}, [data.counter]);
   return (
-    <Provider>
-      <Card>
-        <h1>{Data.counter}</h1>
-        <button onClick={handleIncrement}>Inc</button>
-        <button onClick={handleDecrement}>Dec</button>
-        <button onClick={resetCounter}>Reset</button>
-        <button onClick={toggleOption}>Option</button>
-      </Card>
-      <Card>
-        {Data.option && <h3>Option</h3>}
+    <Fragment>
+      <section>
+        {true && (
+          <Card>
+            <h1>LOGO</h1>
+          </Card>
+        )}
+        <Card>
+          <Card>
+            <div className={classes["header"]}>
+              <h1>{data.counter}</h1>
+            </div>
+          </Card>
+          <main className={classes["main"]}>
+            <div
+              className={[
+                classes["inc-circle"],
+                classes["disable-select"],
+              ].join(" ")}
+              onClick={handleIncrement}
+            >
+              <p
+                className={[
+                  classes["inc-text"],
+                  classes["disable-select"],
+                ].join(" ")}
+              >
+                <>+</>
+              </p>
+            </div>
+            <div className={classes["option"]} onClick={toggleOption}>
+              <div className={classes["option-box"]}>
+                <div className={classes["dot"]} />
+                <div className={classes["dot"]} />
+                <div className={classes["dot"]} />
+              </div>
+            </div>
+          </main>
+        </Card>
+        {data.option && (
+          <>
+            <Card className={classes["options-container"]}>
+              <div className={classes["container"]}>
+                <header>Option</header>
+              </div>
+              <section className={classes["main"]}>
+                <Card className={classes["option-item"]}>
+                  <div
+                    className={classes["option-item"]}
+                    onClick={() => {
+                      resetCounter();
+                      toggleOption();
+                    }}
+                  >
+                    Reset
+                  </div>
+                </Card>
+              </section>
+            </Card>
+          </>
+        )}
+        {/* <Card>
+        {data.option && <h3>Option</h3>}
         <ul>
           <li>Stop at zero</li>
           <li>Toggle Button</li>
@@ -35,7 +87,8 @@ export const App = () => {
         <h3>Auto</h3>
         <Card>Increment/Decrement Toggle Button</Card>
         <Card>Counter Auto</Card>
-      </Card>
-    </Provider>
-  )
-}
+      </Card> */}
+      </section>
+    </Fragment>
+  );
+};

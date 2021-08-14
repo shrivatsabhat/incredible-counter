@@ -1,13 +1,11 @@
 @import url("../../../styles/index.module.scss");
 
 .circle {
-  width: 100pt;
-  height: 100pt;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
-  justify-content: space-evenly;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
 
   &-center {
     align-items: center;
@@ -17,11 +15,11 @@
     align-items: flex-start;
     justify-content: center;
   }
-  &-top-left {
+  &-topLeft {
     align-items: flex-start;
     justify-content: flex-start;
   }
-  &-top-right {
+  &-topRight {
     align-items: flex-start;
     justify-content: flex-end;
   }

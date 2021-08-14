@@ -17,4 +17,10 @@ export default defineConfig({
       "@helper": resolve(__dirname, "./src/helper"),
     },
   },
+  server: {
+    fs: {
+      // Allow serving files from one level up to the project root
+      allow: ["./src", "./src/**"],
+    },
+  },
 });
