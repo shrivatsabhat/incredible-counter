@@ -4,14 +4,16 @@ export enum DATA_TYPE {
   RANGE = "range",
   OPTION = "option",
   AUTO_COUNTER = "autoCounter",
-  START_AT_ZERO = "stopAtZero",
-  CUSTOM_STOP = "customStop",
-  AUTO_COUNTER_TYPE = "autoCounterType",
-  DEFAULT_COUNTER = "defaultCounter",
+  COUNTER_TYPE = "counterType",
 }
 
 export enum STORE {
-  STORE_DATA = "store"
+  STORE_DATA = "store",
+}
+
+export enum COUNTER_TYPE {
+  INC = "increment",
+  DEC = "decrement",
 }
 
 export const TYPE = {
@@ -21,10 +23,7 @@ export const TYPE = {
     RANGE: DATA_TYPE.RANGE,
     OPTION: DATA_TYPE.OPTION,
     AUTO_COUNTER: DATA_TYPE.AUTO_COUNTER,
-    START_AT_ZERO: DATA_TYPE.START_AT_ZERO,
-    CUSTOM_STOP: DATA_TYPE.CUSTOM_STOP,
-    AUTO_COUNTER_TYPE: DATA_TYPE.AUTO_COUNTER_TYPE,
-    DEFAULT_COUNTER: DATA_TYPE.DEFAULT_COUNTER,
+    COUNTER_TYPE: DATA_TYPE.COUNTER_TYPE,
   },
-  STORE: STORE.STORE_DATA
-}
+  STORE: STORE.STORE_DATA,
+};
