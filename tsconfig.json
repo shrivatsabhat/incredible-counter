@@ -23,6 +23,7 @@
       "@container": ["container"],
       "@assets": ["assets"],
       "@styles": ["styles"],
+      "@screen": ["Screen"],
       "@helper": ["helper"]
     }
   },

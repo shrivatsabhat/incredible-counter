@@ -15,6 +15,7 @@ export default defineConfig({
       "@assets": resolve(__dirname, "./src/assets"),
       "@styles": resolve(__dirname, "./src/styles"),
       "@helper": resolve(__dirname, "./src/helper"),
+      "@screen": resolve(__dirname, "./src/Screen"),
     },
   },
   server: {
