@@ -6,9 +6,7 @@ import classes from "./Home.module.scss";
 
 export const Home: FC = () => {
   const [data, store] = useStore();
-  console.log(data);
-  const resetCounter = () => store(TYPE.DATA.COUNTER, 0);
-  const toggleOption = () => store(TYPE.DATA.OPTION, !data.option);
+
   const handleToggle = () => {
     if (data.counterType === COUNTER_TYPE.INC)
       store(TYPE.DATA.COUNTER_TYPE, COUNTER_TYPE.DEC);
@@ -34,7 +32,12 @@ export const Home: FC = () => {
       <hr />
       <div className={classes.btnContainer}>
         <button className={classes.btnAction} onClick={handleAction}>
-          Increment
+          {
+            {
+              [COUNTER_TYPE.INC]: "Increment",
+              [COUNTER_TYPE.DEC]: "Decrement",
+            }[data.counterType]
+          }
         </button>
       </div>
     </Card>
