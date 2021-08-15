@@ -9,6 +9,7 @@ export enum DATA_TYPE {
   OPTION = "option",
   AUTO_COUNTER = "autoCounter",
   COUNTER_TYPE = "counterType",
+  DELAY = "delay",
 }
 
 export enum STORE {
@@ -28,6 +29,7 @@ export const TYPE = {
     OPTION: DATA_TYPE.OPTION,
     AUTO_COUNTER: DATA_TYPE.AUTO_COUNTER,
     COUNTER_TYPE: DATA_TYPE.COUNTER_TYPE,
+    DELAY: DATA_TYPE.DELAY,
   },
   STORE: STORE.STORE_DATA,
 };
