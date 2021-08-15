@@ -3,6 +3,7 @@ import { Card } from "@atoms";
 import { useStore } from "@container";
 import { TYPE, COUNTER_TYPE } from "@helper";
 import classes from "./Home.module.scss";
+import { Icon } from "@assets";
 
 export const Home: FC = () => {
   const [data, store] = useStore();
@@ -43,7 +44,24 @@ export const Home: FC = () => {
   return (
     <Card className={classes.container}>
       <button className={classes.toggle} onClick={handleToggle}>
-        toggle
+        {
+          {
+            [COUNTER_TYPE.INC]: (
+              <>
+                <label style={{ fontWeight: 900 }}>+</label>
+                <img alt="X" src={Icon.toggleIcon} />
+                <label>−</label>
+              </>
+            ),
+            [COUNTER_TYPE.DEC]: (
+              <>
+                <label style={{ fontWeight: 900 }}>-</label>
+                <img alt="X" src={Icon.toggleIcon} />
+                <label>+</label>
+              </>
+            ),
+          }[data.counterType]
+        }
       </button>
       <main className={classes.main}>
         <h1>{data.counter}</h1>
@@ -52,7 +70,7 @@ export const Home: FC = () => {
       <div className={classes.btnContainer}>
         {data.autoCounter ? (
           <Fragment>
-            <label htmlFor="delay">Delay: {data.delay / 1000}</label>
+            <label htmlFor="delay">Delay Time: {data.delay / 1000}</label>
             <input
               id="delay"
               className={classes.btnAction}

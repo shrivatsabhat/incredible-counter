@@ -3,6 +3,7 @@ import { useStore } from "@container";
 import { TYPE } from "@helper";
 import React, { Fragment, ChangeEvent } from "react";
 import { Reset } from "../Reset";
+import classes from "./menu.module.scss";
 
 export const Menu = () => {
   const [data, store] = useStore();
@@ -32,24 +33,29 @@ export const Menu = () => {
     console.log(maxValue);
   }
   return (
-    <Fragment>
-      Menu
-      <Fragment>
+    <main>
+      <Card className={classes.autoCounter}>
         <button onClick={handleClick}>Auto Counter</button>
-        <input
-          type="number"
-          onChange={handleMinValue}
-          min="1000"
-          step="1000"
-          list="number-list"
-        />
-        <input
-          type="number"
-          onChange={handleMaxValue}
-          min="2000"
-          step="1000"
-          list="number-list"
-        />
+        <div>
+          <label>Min value</label>
+          <input
+            type="number"
+            onChange={handleMinValue}
+            min="1000"
+            step="1000"
+            list="number-list"
+          />
+        </div>
+        <div>
+          <label>Max value</label>
+          <input
+            type="number"
+            onChange={handleMaxValue}
+            min="2000"
+            step="1000"
+            list="number-list"
+          />
+        </div>
         <datalist id="number-list">
           <option value={1000} />
           <option value={2000} />
@@ -59,10 +65,10 @@ export const Menu = () => {
           <option value={10000} />
           <option value={20000} />
         </datalist>
-      </Fragment>
+      </Card>
       <Card>
         <Reset />
       </Card>
-    </Fragment>
+    </main>
   );
 };
