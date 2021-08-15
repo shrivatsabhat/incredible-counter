@@ -9,7 +9,9 @@ export type Value =
   | string[]
   | number[]
   | CallableFunction
-  | null;
+  | null
+  | typeof _state.range;
+
 export type Key = DATA_TYPE;
 
 export const CenteralStore = createContext(_defaultData);

@@ -6,15 +6,30 @@ import { Reset } from "../Reset";
 
 export const Menu = () => {
   const [data, store] = useStore();
+
   function handleClick() {
     store(TYPE.DATA.AUTO_COUNTER, !data.autoCounter);
   }
+
   function handleMinValue(evt: ChangeEvent<HTMLInputElement>) {
-    const minValue = parseInt(evt.target.value, 10);
-    console.log(minValue / 1000);
+    let minValue: number = parseInt(evt.target.value, 10);
+    const firstDigit = Math.floor(minValue / 1000) | 0;
+    if (minValue < 1000) minValue = 1000;
+    if (minValue > firstDigit * 1000 && minValue < firstDigit * 1000 + 1000) {
+      minValue = firstDigit * 1000;
+    }
+    store(TYPE.DATA.RANGE, { ...data.range, min: minValue });
   }
+
   function handleMaxValue(evt: ChangeEvent<HTMLInputElement>) {
-    console.log();
+    let maxValue: number = parseInt(evt.target.value, 10);
+    const firstDigit = Math.floor(maxValue / 1000) | 0;
+    if (maxValue < 2000) maxValue = 2000;
+    if (maxValue > firstDigit * 1000 && maxValue < firstDigit * 1000 + 1000) {
+      maxValue = firstDigit * 1000;
+    }
+    store(TYPE.DATA.RANGE, { ...data.range, max: maxValue });
+    console.log(maxValue);
   }
   return (
     <Fragment>
