@@ -4,10 +4,11 @@ import { COUNTER_TYPE } from "@helper";
 export const _state = {
   counter: 0,
   reset: false,
-  range: 1,
+  range: { min: 1000, max: 6000, step: 1000 },
   option: false,
   autoCounter: false,
   counterType: COUNTER_TYPE.INC,
+  delay: 1000,
 };
 
 export const _store = (key: Key, value: Value) => {
