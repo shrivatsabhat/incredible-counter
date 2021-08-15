@@ -1,0 +1,25 @@
+.autoCounter {
+  display: flex;
+  flex-direction: column;
+  button {
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background-color: rgb(5, 59, 129);
+    color: rgb(218, 226, 233);
+    border-radius: 1rem;
+    border: none;
+    font-size: 1.6rem;
+  }
+  div {
+    display: grid;
+    place-items: center;
+    grid-gap: 0.2rem;
+    label {
+      font-size: 1.4rem;
+    }
+    input {
+      padding: 1rem;
+      width: 80%;
+    }
+  }
+}

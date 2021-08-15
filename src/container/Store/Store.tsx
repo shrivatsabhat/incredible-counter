@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import { _defaultData, _state } from "./_data";
-import { DATA_TYPE, useCookie } from "@helper";
+import { DATA_TYPE, KEYS, useCookie } from "@helper";
 
 export type Value =
   | boolean
@@ -9,19 +9,25 @@ export type Value =
   | string[]
   | number[]
   | CallableFunction
-  | null;
+  | null
+  | typeof _state.range;
+
 export type Key = DATA_TYPE;
 
 export const CenteralStore = createContext(_defaultData);
 
 export const Provider: React.FC = ({ children }) => {
-  const [data, setData] = useCookie("__CUSTOM_COUNTER__", _state);
+  const [data, setData] = useCookie(KEYS.key_data, _state);
   const store = (key: Key, value: Value) => {
     const _data = { ...data, [key]: value };
     setData(_data);
     return { state: _data[key] === value, payload: _data };
   };
-  const _store = { data, store };
+  const resetStore = (data?: typeof _state) => {
+    setData(data || _state);
+    return { ...(data || _state) };
+  };
+  const _store = { data, store: { normal: store, hard: resetStore } };
   return (
     <CenteralStore.Provider value={_store}>{children}</CenteralStore.Provider>
   );

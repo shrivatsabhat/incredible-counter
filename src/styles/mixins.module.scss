@@ -1,0 +1,17 @@
+.disable-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: rgba($color: #ececec, $alpha: 1);
+  border-radius: 50%;
+  margin: 0.4rem;
+  &:hover {
+    filter: brightness(120%);
+  }
+}
