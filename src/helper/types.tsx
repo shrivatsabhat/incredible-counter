@@ -1,3 +1,7 @@
+export enum KEYS {
+  key_data = "__CUSTOM_COUNTER__",
+}
+
 export enum DATA_TYPE {
   COUNTER = "counter",
   RESET = "reset",

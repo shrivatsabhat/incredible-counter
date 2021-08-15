@@ -14,7 +14,11 @@ export const _store = (key: Key, value: Value) => {
   return { state: true, payload: _state };
 };
 
+export const _hardStore = (data: typeof _state) => {
+  return { ...data };
+};
+
 export const _defaultData = {
   data: _state,
-  store: _store,
+  store: { normal: _store, hard: _hardStore },
 };
