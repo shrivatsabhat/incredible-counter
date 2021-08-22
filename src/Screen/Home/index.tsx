@@ -1,9 +1,9 @@
-import React, { ChangeEvent, FC, Fragment, useEffect, useState } from "react";
-import { Card } from "@atoms";
-import { useStore } from "@container";
-import { TYPE, COUNTER_TYPE } from "@helper";
-import classes from "./Home.module.scss";
-import { Icon } from "@assets";
+import React, { ChangeEvent, FC, Fragment, useEffect, useState } from 'react';
+import { Card } from '@atoms';
+import { useStore } from '@container';
+import { TYPE, COUNTER_TYPE } from '@helper';
+import classes from './Home.module.scss';
+import { Icon } from '@assets';
 
 export const Home: FC = () => {
   const [data, store] = useStore();
@@ -82,7 +82,7 @@ export const Home: FC = () => {
               value={data.delay}
             />
             <button className={classes.btnAction} onClick={handleAutoState}>
-              {autoCounterState.state ? "Stop" : "Start"}
+              {autoCounterState.state ? 'Stop' : 'Start'}
             </button>
           </Fragment>
         ) : (
@@ -90,8 +90,8 @@ export const Home: FC = () => {
             <button className={classes.btnAction} onClick={handleAction}>
               {
                 {
-                  [COUNTER_TYPE.INC]: "Increment",
-                  [COUNTER_TYPE.DEC]: "Decrement",
+                  [COUNTER_TYPE.INC]: 'Increment',
+                  [COUNTER_TYPE.DEC]: 'Decrement',
                 }[data.counterType]
               }
             </button>

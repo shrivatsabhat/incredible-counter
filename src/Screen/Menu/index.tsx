@@ -1,9 +1,9 @@
-import { Card } from "@atoms";
-import { useStore } from "@container";
-import { TYPE } from "@helper";
-import React, { Fragment, ChangeEvent } from "react";
-import { Reset } from "../Reset";
-import classes from "./menu.module.scss";
+import { Card } from '@atoms';
+import { useStore } from '@container';
+import { TYPE } from '@helper';
+import React, { Fragment, ChangeEvent } from 'react';
+import { Reset } from '../Reset';
+import classes from './menu.module.scss';
 
 export const Menu = () => {
   const [data, store] = useStore();

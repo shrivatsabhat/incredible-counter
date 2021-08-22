@@ -1,6 +1,6 @@
-import React, { createContext } from "react";
-import { _defaultData, _state } from "./_data";
-import { DATA_TYPE, KEYS, useCookie } from "@helper";
+import React, { createContext } from 'react';
+import { _defaultData, _state } from './_data';
+import { DATA_TYPE, KEYS, useCookie } from '@helper';
 
 export type Value =
   | boolean

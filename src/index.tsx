@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import { App, Provider } from '@container'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import { App, Provider } from '@container';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,4 +10,4 @@ ReactDOM.render(
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
-)
+);

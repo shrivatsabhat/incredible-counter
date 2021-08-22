@@ -1,24 +1,24 @@
 export enum KEYS {
-  key_data = "__CUSTOM_COUNTER__",
+  key_data = '__CUSTOM_COUNTER__',
 }
 
 export enum DATA_TYPE {
-  COUNTER = "counter",
-  RESET = "reset",
-  RANGE = "range",
-  OPTION = "option",
-  AUTO_COUNTER = "autoCounter",
-  COUNTER_TYPE = "counterType",
-  DELAY = "delay",
+  COUNTER = 'counter',
+  RESET = 'reset',
+  RANGE = 'range',
+  OPTION = 'option',
+  AUTO_COUNTER = 'autoCounter',
+  COUNTER_TYPE = 'counterType',
+  DELAY = 'delay',
 }
 
 export enum STORE {
-  STORE_DATA = "store",
+  STORE_DATA = 'store',
 }
 
 export enum COUNTER_TYPE {
-  INC = "increment",
-  DEC = "decrement",
+  INC = 'increment',
+  DEC = 'decrement',
 }
 
 export const TYPE = {

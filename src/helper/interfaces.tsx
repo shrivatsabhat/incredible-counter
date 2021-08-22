@@ -1,9 +1,9 @@
 export interface BasicColor {
-  color?: "PRIMARY" | "SECONDARY" | "TERNARY" | "NONE";
+  color?: 'PRIMARY' | 'SECONDARY' | 'TERNARY' | 'NONE';
 }
 
 export interface BasicSize {
-  size?: "S" | "M" | "L" | "XL";
+  size?: 'S' | 'M' | 'L' | 'XL';
 }
 
 export interface BasicFontSize {
@@ -17,8 +17,8 @@ export interface BasicFontSize {
     | 700
     | 800
     | 900
-    | "bold"
-    | "normal";
+    | 'bold'
+    | 'normal';
 }
 
 export interface BasicStyle extends BasicColor, BasicSize, BasicFontSize {}
