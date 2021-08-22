@@ -11,8 +11,8 @@ export const Card: React.FC<CardProps> = props => {
   const className = [
     props.className,
     style.card,
-    style[`size-${props.size}`],
-    style[`color-${props.color}`],
+    style[`size-${props.Size}`],
+    style[`color-${props.Color}`],
   ].join(' ');
   return <div className={className}>{props.children}</div>;
 };
