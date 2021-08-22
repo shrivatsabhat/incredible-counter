@@ -1,9 +1,9 @@
 export interface BasicColor {
-  color?: 'PRIMARY' | 'SECONDARY' | 'TERNARY' | 'NONE';
+  Color?: 'PRIMARY' | 'SECONDARY' | 'TERNARY' | 'NONE';
 }
 
 export interface BasicSize {
-  size?: 'S' | 'M' | 'L' | 'XL';
+  Size?: 'S' | 'M' | 'L' | 'XL';
 }
 
 export interface BasicFontSize {
@@ -26,4 +26,8 @@ export interface OnClick {
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
-export interface MouseEventHandler extends OnClick {}
+export interface OnFocus {
+  onFocus?: React.FocusEventHandler<HTMLElement>;
+}
+
+export interface MouseEventHandler extends OnClick, OnFocus {}
