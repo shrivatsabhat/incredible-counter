@@ -1,0 +1,5 @@
+CHANGELOG.md
+/build
+/dist
+lib
+node_modules

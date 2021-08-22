@@ -1,7 +1,7 @@
-import React from "react";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Nav } from "./Navigation";
-import { routes } from "./Route";
+import React from 'react';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Nav } from './Navigation';
+import { routes } from './Route';
 
 export const Routes = () => {
   return (
@@ -22,4 +22,4 @@ export const Routes = () => {
   );
 };
 
-export * from "./Route";
+export * from './Route';

@@ -1,4 +1,4 @@
-import toggleIcon from "./recycle.png";
+import toggleIcon from './recycle.png';
 export const Icon = {
   toggleIcon,
 };

@@ -1,5 +1,5 @@
-import { Value, Key } from "../Store";
-import { COUNTER_TYPE } from "@helper";
+import { Value, Key } from '../Store';
+import { COUNTER_TYPE } from '@helper';
 
 export const _state = {
   counter: 0,

@@ -1,0 +1,16 @@
+{
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.watcherExclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/node_modules/**": true,
+    "**/node_modules/*/**": true,
+    "**/some-soft-link-to-higher-level-directory-in-my-file-system": true,
+    "**/.cache-loader": true,
+    "**/dist": true,
+    "**/dist/**": true,
+    "**/dist/*/**": true
+  },
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+  "editor.formatOnSave": true
+}
