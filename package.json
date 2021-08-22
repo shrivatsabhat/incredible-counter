@@ -5,7 +5,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "pretty-quick": "pretty-quick"
   },
   "dependencies": {
     "react": "^17.0.0",
