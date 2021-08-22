@@ -1,4 +1,11 @@
-import React, { ChangeEvent, FC, Fragment, useEffect, useState } from 'react';
+import React, {
+  ChangeEvent,
+  FC,
+  Fragment,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Card } from '@atoms';
 import { useStore } from '@container';
 import { TYPE, COUNTER_TYPE } from '@helper';
@@ -41,9 +48,15 @@ export const Home: FC = () => {
     return () => clearInterval(timer);
   }, [data.counter, autoCounterState.state]);
 
+  const ref = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    null !== ref.current && ref.current.focus();
+  }, []);
+
   return (
     <Card className={classes.container}>
-      <button className={classes.toggle} onClick={handleToggle}>
+      <button className={classes.toggle} onClick={handleToggle} type="submit">
         {
           {
             [COUNTER_TYPE.INC]: (
@@ -81,13 +94,19 @@ export const Home: FC = () => {
               onChange={handleDelay}
               value={data.delay}
             />
-            <button className={classes.btnAction} onClick={handleAutoState}>
+            <button
+              className={classes.btnAction}
+              onClick={handleAutoState}
+              ref={ref}>
               {autoCounterState.state ? 'Stop' : 'Start'}
             </button>
           </Fragment>
         ) : (
           <Fragment>
-            <button className={classes.btnAction} onClick={handleAction}>
+            <button
+              className={classes.btnAction}
+              onClick={handleAction}
+              ref={ref}>
               {
                 {
                   [COUNTER_TYPE.INC]: 'Increment',
