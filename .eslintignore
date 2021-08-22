@@ -1,0 +1,5 @@
+# Compiled output
+**/*.test.js
+build
+dist
+node_modules
