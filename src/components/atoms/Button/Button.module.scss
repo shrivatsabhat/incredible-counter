@@ -1,4 +1,4 @@
-@import url('../../../styles/index.module.scss');
+@import url('../../../styles/index.scss');
 
 .button {
   padding: 0.2rem 0.5rem;
@@ -7,9 +7,7 @@
   cursor: pointer;
   font-weight: bold;
 
-  &:hover {
-    filter: brightness(125%);
-  }
+  @include hover-brightness;
 }
 
 .size-S {
