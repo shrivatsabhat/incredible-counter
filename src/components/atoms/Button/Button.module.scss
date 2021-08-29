@@ -1,24 +1,2 @@
-@import url('../../../styles/index.scss');
-
-.button {
-  padding: 0.2rem 0.5rem;
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-
-  @include hover-brightness;
-}
-
-.size-S {
-  padding: 0.2rem 1rem;
-}
-.size-M {
-  padding: 0.4rem 1.5rem;
-}
-.size-L {
-  padding: 0.8rem 2rem;
-}
-.size-XL {
-  padding: 1rem 4rem;
-}
+@use '../../../styles/index' as *;
+@use '../../../styles/functions/unit' as *;
