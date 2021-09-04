@@ -1,0 +1,26 @@
+@mixin hover-brightness {
+  transition: filter 250ms ease-in-out;
+  &:hover {
+    filter: brightness(120%);
+  }
+}
+
+@mixin hover-lift {
+  transition: transform 250ms ease-in-out;
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+@mixin hover {
+  @include hover-brightness;
+  @include hover-lift;
+}
+
+@mixin disable-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

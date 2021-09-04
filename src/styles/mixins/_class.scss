@@ -1,11 +1,10 @@
-.disable-select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.dot {
+@mixin dot {
   width: 0.8rem;
   height: 0.8rem;
   background: rgba($color: #ececec, $alpha: 1);
@@ -14,4 +13,9 @@
   &:hover {
     filter: brightness(120%);
   }
+}
+
+@mixin title {
+  font-size: $fonts-size-XL;
+  font-weight: bold;
 }
