@@ -7,11 +7,13 @@
     "serve": "vite preview",
     "prepare": "husky install",
     "lint": "prettier --check .",
-    "format": "prettier --write .",
+    "format": "prettier --write \"**/*.{ts,tsx,scss,css,js,jsx,json,md}\"",
     "pretty-quick": "pretty-quick",
     "log": "changelog generate",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint:check": "eslint ./",
+    "eslint": "eslint ./ --fix"
   },
   "dependencies": {
     "react": "^17.0.0",
