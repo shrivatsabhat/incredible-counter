@@ -1,0 +1,16 @@
+import React, { FC } from 'react';
+import { BasicStyle } from '@helper';
+import styles from './{{pascalCase name}}.module.scss';
+
+export interface {{pascalCase name}}Props extends BasicStyle {
+  className?: string;
+}
+
+export const {{pascalCase name}}: FC<{{pascalCase name}}Props> = props => {
+  const className = [
+    styles[`size-${props.Size}`],
+    styles[`color-${props.Color}`],
+    props.className,
+  ].join(' ');
+  return <div className={className}>{props.children}</div>;
+};
