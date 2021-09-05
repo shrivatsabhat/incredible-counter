@@ -1,4 +1,4 @@
-import { Card } from '@atoms';
+import { Card, Text } from '@atoms';
 import { useStore } from '@container';
 import { TYPE } from '@helper';
 import React, { Fragment, ChangeEvent } from 'react';
@@ -37,7 +37,7 @@ export const Menu = () => {
       <Card className={classes.autoCounter}>
         <button onClick={handleClick}>Auto Counter</button>
         <div>
-          <label>Min value</label>
+          <Text type="label">Min value</Text>
           <input
             type="number"
             onChange={handleMinValue}
@@ -47,7 +47,7 @@ export const Menu = () => {
           />
         </div>
         <div>
-          <label>Max value</label>
+          <Text type="label">Max value</Text>
           <input
             type="number"
             onChange={handleMaxValue}

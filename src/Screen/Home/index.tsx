@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Card } from '@atoms';
+import { Card, Text } from '@atoms';
 import { useStore } from '@container';
 import { TYPE, COUNTER_TYPE } from '@helper';
 import classes from './Home.module.scss';
@@ -61,29 +61,35 @@ export const Home: FC = () => {
           {
             [COUNTER_TYPE.INC]: (
               <>
-                <label style={{ fontWeight: 900 }}>+</label>
+                <Text type="label" style={{ fontWeight: 900 }}>
+                  +
+                </Text>
                 <img alt="X" src={Icon.toggleIcon} />
-                <label>−</label>
+                <Text type="label">−</Text>
               </>
             ),
             [COUNTER_TYPE.DEC]: (
               <>
-                <label style={{ fontWeight: 900 }}>-</label>
+                <Text type="label" style={{ fontWeight: 900 }}>
+                  -
+                </Text>
                 <img alt="X" src={Icon.toggleIcon} />
-                <label>+</label>
+                <Text type="label">+</Text>
               </>
             ),
           }[data.counterType]
         }
       </button>
       <main className={classes.main}>
-        <h1>{data.counter}</h1>
+        <Text type="h1">{data.counter}</Text>
       </main>
       <hr />
       <div className={classes.btnContainer}>
         {data.autoCounter ? (
           <Fragment>
-            <label htmlFor="delay">Delay Time: {data.delay / 1000}</label>
+            <Text type="label" htmlFor="delay">
+              Delay Time: {data.delay / 1000}
+            </Text>
             <input
               id="delay"
               className={classes.btnAction}
