@@ -14,7 +14,8 @@
     "build-storybook": "build-storybook",
     "lint:check": "eslint ./",
     "eslint": "eslint ./ --fix",
-    "plop": "plop"
+    "plop": "plop",
+    "pre-commit": "prettier --write . && git add -A ."
   },
   "dependencies": {
     "react": "^17.0.0",
