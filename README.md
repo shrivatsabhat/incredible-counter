@@ -67,3 +67,9 @@ yarn plop
 - enter component name
 - choose the folder location
 - done
+
+# View Componets
+
+```bash
+yarn storybook
+```
