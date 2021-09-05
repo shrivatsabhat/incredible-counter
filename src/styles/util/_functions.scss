@@ -3,11 +3,11 @@
 
 // Source: https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
 @function stripUnit($value) {
-  @return $value / ($value * 0 + 1);
+  @return math.div($value, ($value * 0 + 1));
 }
 
 @function em($pxValue) {
-  @return #{stripUnit($pxValue) / stripUnit(font.$html-font-size)}rem;
+  @return math.div(stripUnit($pxValue), stripUnit(font.$html-font-size)) * 1rem;
 }
 
 // Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
