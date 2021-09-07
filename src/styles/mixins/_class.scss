@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
 @mixin dot {
   width: 0.8rem;
   height: 0.8rem;
