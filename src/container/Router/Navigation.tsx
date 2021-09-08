@@ -4,7 +4,7 @@ import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import classes from './styles.module.scss';
 
-export function Nav() {
+export function Nav(): JSX.Element {
   return (
     <Card className={classes.container}>
       <span>

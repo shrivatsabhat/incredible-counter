@@ -11,11 +11,14 @@ export const _state = {
   delay: 1000,
 };
 
-export const _store = (key: Key, value: Value) => {
+export const _store = (
+  _key: Key,
+  _value: Value
+): { state: boolean; payload: typeof _state } => {
   return { state: true, payload: _state };
 };
 
-export const _hardStore = (data: typeof _state) => {
+export const _hardStore = (data: typeof _state): typeof data => {
   return { ...data };
 };
 

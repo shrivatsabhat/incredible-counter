@@ -1,11 +1,11 @@
 import { Card, Text } from '@atoms';
 import { useStore } from '@container';
 import { TYPE } from '@helper';
-import React, { Fragment, ChangeEvent } from 'react';
+import React, { ChangeEvent, FC } from 'react';
 import { Reset } from '../Reset';
 import classes from './menu.module.scss';
 
-export const Menu = () => {
+export const Menu: FC = () => {
   const [data, store] = useStore();
 
   function handleClick() {
@@ -30,7 +30,6 @@ export const Menu = () => {
       maxValue = firstDigit * 1000;
     }
     store(TYPE.DATA.RANGE, { ...data.range, max: maxValue });
-    console.log(maxValue);
   }
   return (
     <main>
