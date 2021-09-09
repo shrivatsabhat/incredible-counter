@@ -8,7 +8,9 @@ export function Nav(): JSX.Element {
   return (
     <Card className={classes.container}>
       <span>
-        <Text type="p">Counter</Text>
+        <Link to={'/'}>
+          <Text type="p">Counter</Text>
+        </Link>
       </span>
       {routes.map(route => (
         <span key={route.id}>
