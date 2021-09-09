@@ -1,3 +1,34 @@
+#### 0.0.4 (2021-09-09)
+
+##### Chores
+
+*  add commit lint (03477147)
+*  add lint staged (73c585c1)
+*  update pre-commit (2a5baf9a)
+*  version bump (bd504380)
+
+##### Documentation Changes
+
+*  update change log (941dcf68)
+
+##### Bug Fixes
+
+*  fix merge conflict (461c35da)
+
+##### Other Changes
+
+* //github.com/shrivatsabhat/incredible-counter into develop (ff91be41)
+*  add toast component (5c5612ac)
+
+##### Refactors
+
+*  fix eslint warning and file structure (7b57fafc)
+*  update components (73b3d11e)
+
+##### Code Style Changes
+
+*  update convertion function (82ac6d55)
+
 #### 0.0.3 (2021-09-05)
 
 ##### Chores
