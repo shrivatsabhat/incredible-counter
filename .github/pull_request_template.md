@@ -1,3 +1,5 @@
+<!-- Remove the text block if it is not used or necessary -->
+
 ## Description
 
 Please include a summary of the change or which issue is fixed.
@@ -43,3 +45,28 @@ Please include a summary of the change or which issue is fixed.
 - [ ] I added description to admin fields in hard-to-understand areas
 - [ ] I followed guidelines for naming `php`/`liquid` variables
 - [ ] I conducted basic QA to assure all features are working
+
+## Related Issue
+
+- issue goes here
+
+## Proposed Changes
+
+- change 1
+- change 2
+
+## Additional Info
+
+- any additional information or context
+
+## Checklist
+
+- [ ] Tests
+- [ ] Translations
+- [ ] Docuementation
+
+## Screenshots
+
+|         Original          |         Updated          |
+| :-----------------------: | :----------------------: |
+| ** original screenshot ** | ** updated screenshot ** |
