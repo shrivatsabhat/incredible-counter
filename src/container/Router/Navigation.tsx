@@ -1,14 +1,14 @@
-import { Card } from '@atoms';
+import { Card, Text } from '@atoms';
 import { routes } from './Route';
 import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import classes from './styles.module.scss';
 
-export function Nav() {
+export function Nav(): JSX.Element {
   return (
     <Card className={classes.container}>
       <span>
-        <p>Counter</p>
+        <Text type="p">Counter</Text>
       </span>
       {routes.map(route => (
         <span key={route.id}>

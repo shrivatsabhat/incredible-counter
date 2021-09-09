@@ -1,6 +1,10 @@
+@use '../../../styles' as *;
+
 .card {
-  margin: 1rem;
-  border-radius: 0.4rem;
-  box-shadow: 0rem 0rem 1rem rgba($color: hsl(0, 0%, 0%), $alpha: 0.5);
-  padding: 1rem;
+  margin: rem(10px);
+  border-radius: rem(10px);
+  box-shadow: rem(0) rem(4) rem(4) rgba($color: $clr-shade-07, $alpha: 0.5);
+  padding: rem(10px);
+  border: rem(2) solid $clr-shade-05;
+  background: $clr-shade-02;
 }

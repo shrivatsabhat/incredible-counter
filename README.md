@@ -32,33 +32,37 @@ yarn dev
 
 or
 
+> run as watch mode under netwrok at port 3000
+
 ```bash
 yarn dev --host
 ```
 
 # Format and Lint
 
-> Check for linter
+> Check for linter and code formater
 
 ```bash
 yarn lint:check
-yarn lint
+yarn format:check
 ```
 
-> Fix
+> Fix the issue on code format and linting
 
 ```bash
 yarn format
-yarn eslint
+yarn lint
 ```
 
 # Generate Components
+
+> Generate the components folder as per pre-defined template by running the following command.
 
 ```bash
 yarn plop <compnent name>
 ```
 
-or
+> or
 
 ```bash
 yarn plop
@@ -69,6 +73,8 @@ yarn plop
 - done
 
 # View Componets
+
+> Check all available component element in this hobby project (this may not work as per planned)
 
 ```bash
 yarn storybook

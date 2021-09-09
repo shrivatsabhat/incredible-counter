@@ -1,11 +1,11 @@
-import { Card } from '@atoms';
+import { Card, Text } from '@atoms';
 import { useStore } from '@container';
 import { TYPE } from '@helper';
-import React, { Fragment, ChangeEvent } from 'react';
+import React, { ChangeEvent, FC } from 'react';
 import { Reset } from '../Reset';
 import classes from './menu.module.scss';
 
-export const Menu = () => {
+export const Menu: FC = () => {
   const [data, store] = useStore();
 
   function handleClick() {
@@ -30,14 +30,13 @@ export const Menu = () => {
       maxValue = firstDigit * 1000;
     }
     store(TYPE.DATA.RANGE, { ...data.range, max: maxValue });
-    console.log(maxValue);
   }
   return (
     <main>
       <Card className={classes.autoCounter}>
         <button onClick={handleClick}>Auto Counter</button>
         <div>
-          <label>Min value</label>
+          <Text type="label">Min value</Text>
           <input
             type="number"
             onChange={handleMinValue}
@@ -47,7 +46,7 @@ export const Menu = () => {
           />
         </div>
         <div>
-          <label>Max value</label>
+          <Text type="label">Max value</Text>
           <input
             type="number"
             onChange={handleMaxValue}

@@ -1,6 +1,6 @@
 import { BasicStyle } from '@helper';
 import React, { forwardRef, HTMLProps } from 'react';
-import style from './Button.module.scss';
+import styles from './Button.module.scss';
 
 interface ButtonProps extends BasicStyle, HTMLProps<HTMLButtonElement> {
   disabled?: boolean;
@@ -11,10 +11,10 @@ interface ButtonProps extends BasicStyle, HTMLProps<HTMLButtonElement> {
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
     const className = [
-      style.className,
-      style.button,
-      style[`size-${props.Size}`],
-      style[`color-${props.Color}`],
+      styles.button,
+      styles.className,
+      styles[`size-${props.Size}`],
+      styles[`color-${props.Color}`],
     ].join(' ');
 
     return (
@@ -24,3 +24,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
+
+Button.displayName = 'Button';

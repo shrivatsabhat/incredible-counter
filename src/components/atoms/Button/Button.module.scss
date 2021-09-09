@@ -1,1 +1,13 @@
-@use '../../../styles/index' as *;
+@use '../../../styles' as *;
+
+.button {
+  background: $clr-shade-11;
+  border: none;
+  min-width: fit-content;
+  min-height: rem(24px);
+  height: rem(80px);
+  width: 100%;
+  border-radius: rem(10px);
+  font-size: $fonts-size-L;
+  cursor: pointer;
+}

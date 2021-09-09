@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
-import classes from './App.module.scss';
 import { Routes } from '../Router';
 
-export const App = () => {
+export const App = (): JSX.Element => {
   return (
     <Fragment>
       <Routes />
