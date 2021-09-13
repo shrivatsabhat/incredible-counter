@@ -1,3 +1,9 @@
+@use '../../styles' as *;
+
+a {
+  @include reset-a;
+}
+
 .container {
   display: flex;
   justify-content: space-around;
@@ -17,7 +23,6 @@
 .link {
   color: rgb(0, 77, 192);
   font-weight: 500;
-  text-decoration: none;
   padding: 0.5rem;
 }
 .activeLink {

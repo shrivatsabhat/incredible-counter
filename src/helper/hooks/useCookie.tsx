@@ -3,7 +3,7 @@ import { useState } from 'react';
 /*
  * General utils for managing cookies in Typescript.
  */
-export function setCookie(name: string, val: string) {
+export function setCookie(name: string, val: string): void {
   const date = new Date();
   const value = val;
 
@@ -15,7 +15,7 @@ export function setCookie(name: string, val: string) {
     name + '=' + value + '; expires=' + date.toUTCString() + '; path=/';
 }
 
-export function getCookie(name: string) {
+export function getCookie(name: string): string | undefined {
   const value = '; ' + document.cookie;
   const parts = value.split('; ' + name + '=');
 
@@ -25,7 +25,7 @@ export function getCookie(name: string) {
   }
 }
 
-export function deleteCookie(name: string) {
+export function deleteCookie(name: string): void {
   const date = new Date();
 
   // Set it expire in -1 days
@@ -35,7 +35,10 @@ export function deleteCookie(name: string) {
   document.cookie = name + '=; expires=' + date.toUTCString() + '; path=/';
 }
 
-export function useCookie(keyName: string, initialValue: any) {
+export function useCookie<T>(
+  keyName: string,
+  initialValue: T
+): [T, CallableFunction, CallableFunction] {
   const [state, setState] = useState(() => {
     // get stored
     const storedCookie = getCookie(keyName);
@@ -44,12 +47,12 @@ export function useCookie(keyName: string, initialValue: any) {
     return returnstoredCookie || initialValue;
   });
 
-  function setPersistedState(stateValue: any, key?: string) {
+  function setPersistedState<T>(stateValue: T, key?: string): void {
     setCookie(key || keyName, JSON.stringify(stateValue));
     setState(stateValue);
   }
 
-  function clearState(key: string) {
+  function clearState(key: string): void {
     deleteCookie(key);
   }
 

@@ -1,26 +1,13 @@
-@import url('../../../styles/index.module.scss');
+@use '../../../styles' as *;
 
 .button {
-  padding: 0.2rem 0.5rem;
+  background: $clr-shade-11;
   border: none;
-  border-radius: 1rem;
+  min-width: fit-content;
+  min-height: rem(24px);
+  height: rem(80px);
+  width: 100%;
+  border-radius: rem(10px);
+  font-size: $fonts-size-L;
   cursor: pointer;
-  font-weight: bold;
-
-  &:hover {
-    filter: brightness(125%);
-  }
-}
-
-.size-S {
-  padding: 0.2rem 1rem;
-}
-.size-M {
-  padding: 0.4rem 1.5rem;
-}
-.size-L {
-  padding: 0.8rem 2rem;
-}
-.size-XL {
-  padding: 1rem 4rem;
 }

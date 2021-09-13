@@ -16,8 +16,7 @@ export type Key = DATA_TYPE;
 
 export const CenteralStore = createContext(_defaultData);
 
-// eslint-disable-next-line react/prop-types
-export const Provider: React.FunctionComponent = ({ children }) => {
+export const Provider: React.FC = props => {
   const [data, setData] = useCookie(KEYS.key_data, _state);
   const store = (key: Key, value: Value) => {
     const _data = { ...data, [key]: value };
@@ -30,6 +29,8 @@ export const Provider: React.FunctionComponent = ({ children }) => {
   };
   const _store = { data, store: { normal: store, hard: resetStore } };
   return (
-    <CenteralStore.Provider value={_store}>{children}</CenteralStore.Provider>
+    <CenteralStore.Provider value={_store}>
+      {props.children}
+    </CenteralStore.Provider>
   );
 };

@@ -1,0 +1,18 @@
+@use "sass:math";
+@use '../variables/font' as font;
+
+// Source: https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+@function stripUnit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+@function em($pxValue) {
+  @return math.div(stripUnit($pxValue), stripUnit(font.$html-font-size)) * 1rem;
+}
+
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+// Usage: font-size: rem(14px);
+//     or font-size: rem(14);
+@function rem($pixels, $context: font.$html-font-size) {
+  @return (math.div(stripUnit($pixels), stripUnit($context))) * 1rem;
+}

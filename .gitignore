@@ -4,3 +4,5 @@ dist
 dist-ssr
 *.local
 .env
+src/stories
+yarn-error.log
