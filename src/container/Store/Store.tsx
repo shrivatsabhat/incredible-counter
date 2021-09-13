@@ -16,7 +16,8 @@ export type Key = DATA_TYPE;
 
 export const CenteralStore = createContext(_defaultData);
 
-export const Provider: React.FC = ({ children }) => {
+// eslint-disable-next-line react/prop-types
+export const Provider: React.FunctionComponent = ({ children }) => {
   const [data, setData] = useCookie(KEYS.key_data, _state);
   const store = (key: Key, value: Value) => {
     const _data = { ...data, [key]: value };
