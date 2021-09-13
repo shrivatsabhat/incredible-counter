@@ -1,6 +1,9 @@
 import { Home, Menu as Option, About } from '@screen';
 import React from 'react';
 
+/**
+ * returns Array of routes detail Object
+ */
 export const routes = [
   {
     id: 1,
