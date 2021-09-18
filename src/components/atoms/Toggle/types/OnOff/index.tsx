@@ -7,7 +7,7 @@ export const OnOff = () => {
     setToggle(!toggle);
   };
 
-  const style = { '--radius': '40rem' } as React.CSSProperties;
+  const style = { '--radius': '8rem' } as React.CSSProperties;
 
   return (
     <div className={styles['toggle']} style={style}>

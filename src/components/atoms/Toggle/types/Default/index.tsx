@@ -1,21 +1,42 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import styles from './style.module.scss';
 
-export const Default = () => {
+export interface DefaultProps {
+  disabled?: boolean;
+  ban?: boolean;
+}
+
+export const Default: FC<DefaultProps> = ({
+  disabled = false,
+  ban = false,
+}) => {
   const [toggle, setToggle] = useState(false);
   const handleClick = () => {
     setToggle(!toggle);
   };
 
+  const className = [
+    styles['checkbox'],
+    ban ? styles['ban'] : '',
+    disabled || ban ? styles['disabled'] : '',
+    toggle ? styles['checked'] : '',
+  ].join(' ');
+
   return (
-    <div className={styles['checkbox']}>
-      <input type="checkbox" id="check_01" />
-      <label htmlFor="check_01"></label>
-      <span
+    <div className={className}>
+      <input
+        type={'checkbox'}
+        id={'check_box_default'}
+        checked={toggle}
+        disabled={disabled || ban}
+        onChange={handleClick}
+      />
+      <label htmlFor={'check_box_default'} />
+      {/* <span
         className={styles['indicators']}
         data-label-off="off"
         data-label-on="on"
-      />
+      /> */}
     </div>
   );
 };

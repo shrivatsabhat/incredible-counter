@@ -1,18 +1,30 @@
-$prim: hsla(150, 100%, 50%, 1);
-$dark: hsla(150, 100%, 25%, 1);
+$dark: rgb(0, 2, 128);
 
 .checkbox {
+  --container-width: 9rem;
+  --container-height: 4.2rem;
+  --button-radius: 5rem;
+  --toggle-swipe-width: 4rem;
+  --toggle-width: 10rem;
+
+  --left-track-color: hsl(0, 100%, 85%);
+  --right-track-color: hsl(150, 100%, 25%);
+  --left-thumb-color: hsl(0, 0%, 100%);
+  --right-thumb-color: hsl(150, 100%, 50%);
+  --left-label-color: hsl(0, 100%, 50%);
+  --right-label-color: hsl(0, 0%, 100%);
+
   text-align: center;
   position: relative;
   display: block;
-  margin: 1rem auto 3rem;
+  // margin: 1rem auto 3rem;
   label {
-    width: 90px;
-    height: 42px;
-    background: lighten($prim, 35%);
+    width: var(--container-width);
+    height: var(--container-height);
+    background: var(--left-track-color);
     position: relative;
     display: inline-block;
-    border-radius: 46px;
+    border-radius: var(--button-radius);
     transition: all 0.25s;
     box-shadow: inset 0 3px 3px hsla(150, 100%, 0%, 0.25);
     &:after,
@@ -20,24 +32,23 @@ $dark: hsla(150, 100%, 25%, 1);
       content: '';
       text-shadow: 0px 0px 2px hsla(0, 0%, 0%, 0.25);
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: var(--button-radius);
+      height: var(--button-radius);
       border-radius: 100%;
       left: 0;
       top: -5px;
-      background: #fff;
+      background: var(--left-thumb-color);
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
       transition: all 0.25s;
     }
     &:before {
-      content: '\f08d';
-      content: '\f00d';
-      font-family: FontAwesome;
+      content: '\f08d'; // pin icon
+      content: '\f00d'; // cross mark
+      font-family: 'FontAwesome-Solid';
       font-weight: normal;
       font-size: 24px;
-      line-height: 50px;
-      color: $prim;
-      color: hsla(0, 100%, 50%, 1);
+      line-height: var(--button-radius);
+      color: var(--left-label-color);
       z-index: 1;
       overflow: hidden;
       //@include animation(.25s pin-off forwards)
@@ -63,13 +74,13 @@ $dark: hsla(150, 100%, 25%, 1);
         0 3px 8px 0 rgba(0, 0, 0, 0.15);
     }
     &:checked + label {
-      background: $dark;
+      background: var(--right-track-color);
       &:after,
       &:before {
         content: '\f00c'; // tick (check)
-        background: $prim;
-        color: #fff;
-        left: 40px;
+        background: var(--right-thumb-color);
+        color: var(--right-label-color);
+        left: var(--toggle-swipe-width);
       }
       &:before {
         animation: 0.25s pin-on forwards;
@@ -92,14 +103,15 @@ $dark: hsla(150, 100%, 25%, 1);
 */
 .checkbox {
   position: relative;
-  width: 100px;
+  width: var(--toggle-width);
 }
 .checkbox.disabled::after {
   content: '\f023';
   position: absolute;
   top: 10px;
   left: 66px;
-  font-family: FontAwesome;
+  font-family: 'FontAwesome-Solid';
+  font-size: 18px;
   color: hsla(0, 0%, 0%, 0.5);
   text-shadow: 0px 1px 1px hsla(0, 0%, 0%, 0.25);
 }
@@ -121,27 +133,27 @@ small {
   font-size: 12px;
   font-weight: normal;
 }
-.indicators {
-  text-transform: uppercase;
-  font-weight: bold;
-  &::before,
-  &::after {
-    position: absolute;
-    line-height: 40px;
-    cursor: pointer;
-  }
-  &::before {
-    left: -50px;
-    text-align: right;
-    content: attr(data-label-off);
-  }
-  &::after {
-    right: -50px;
-    text-align: left;
-    content: attr(data-label-on);
-  }
-}
-input:checked {
-  & ~ .indicators {
-  }
-}
+// .indicators {
+//   text-transform: uppercase;
+//   font-weight: bold;
+//   &::before,
+//   &::after {
+//     position: absolute;
+//     line-height: 40px;
+//     cursor: pointer;
+//   }
+//   &::before {
+//     left: -50px;
+//     text-align: right;
+//     content: attr(data-label-off);
+//   }
+//   &::after {
+//     right: -50px;
+//     text-align: left;
+//     content: attr(data-label-on);
+//   }
+// }
+// input:checked {
+//   & ~ .indicators {
+//   }
+// }
