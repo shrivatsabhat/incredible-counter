@@ -1,13 +1,18 @@
 @use '../../../styles' as *;
 
 .button {
-  background: $clr-shade-11;
-  border: none;
-  min-width: fit-content;
-  min-height: rem(24px);
-  height: rem(80px);
+  background: $clr-shade-19;
+  border: solid rem(2px) $clr-shade-05;
+  color: $clr-shade-05;
+  height: 100%;
   width: 100%;
   border-radius: rem(10px);
-  font-size: $fonts-size-L;
+  font-size: $fonts-size-XXXXL;
   cursor: pointer;
+  &:focus {
+    outline-color: $clr-shade-05;
+  }
+  &:hover {
+    background: $clr-shade-19;
+  }
 }

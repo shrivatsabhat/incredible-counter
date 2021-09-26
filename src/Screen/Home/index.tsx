@@ -6,11 +6,12 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Card, Text } from '@atoms';
+import { Button, Card, Text } from '@atoms';
 import { useStore } from '@container';
 import { TYPE, COUNTER_TYPE } from '@helper';
 import classes from './Home.module.scss';
 import { Icon } from '@assets';
+import { ActionButton } from '../../components/molecules';
 
 export const Home: FC = () => {
   const [data, store] = useStore();
@@ -100,16 +101,22 @@ export const Home: FC = () => {
               onChange={handleDelay}
               value={data.delay}
             />
-            <button
+            {/* <button
               className={classes.btnAction}
               onClick={handleAutoState}
               ref={ref}>
               {autoCounterState.state ? 'Stop' : 'Start'}
-            </button>
+            </button> */}
+            <ActionButton
+              // className={classes.btnAction}
+              onClick={handleAutoState}
+              ref={ref}>
+              {autoCounterState.state ? 'Stop' : 'Start'}
+            </ActionButton>
           </Fragment>
         ) : (
           <Fragment>
-            <button
+            {/* <button
               className={classes.btnAction}
               onClick={handleAction}
               ref={ref}>
@@ -119,7 +126,15 @@ export const Home: FC = () => {
                   [COUNTER_TYPE.DEC]: 'Decrement',
                 }[data.counterType]
               }
-            </button>
+            </button> */}
+            <ActionButton onClick={handleAction} ref={ref}>
+              {
+                {
+                  [COUNTER_TYPE.INC]: 'Increment',
+                  [COUNTER_TYPE.DEC]: 'Decrement',
+                }[data.counterType]
+              }
+            </ActionButton>
           </Fragment>
         )}
       </div>

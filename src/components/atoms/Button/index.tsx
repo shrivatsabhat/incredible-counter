@@ -2,7 +2,7 @@ import { BasicStyle } from '@helper';
 import React, { forwardRef, HTMLProps } from 'react';
 import styles from './Button.module.scss';
 
-interface ButtonProps extends BasicStyle, HTMLProps<HTMLButtonElement> {
+export interface ButtonProps extends BasicStyle, HTMLProps<HTMLButtonElement> {
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
