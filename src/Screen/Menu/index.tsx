@@ -1,5 +1,5 @@
 import { Card, Text } from '@atoms';
-import { useStore } from '@container';
+import { Navbar, useStore } from '@container';
 import { TYPE } from '@helper';
 import React, { ChangeEvent, FC } from 'react';
 import { Reset } from '../Reset';
@@ -33,6 +33,8 @@ export const Menu: FC = () => {
   }
   return (
     <main>
+      <Navbar />
+
       <Card className={classes.autoCounter}>
         <button onClick={handleClick}>Auto Counter</button>
         <div>

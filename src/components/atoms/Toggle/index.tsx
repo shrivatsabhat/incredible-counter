@@ -1,6 +1,6 @@
 import React, { FC, HTMLProps } from 'react';
 import styles from './Toggle.module.scss';
-import { BulbSwitch, OnOff, Default } from './types';
+import { BulbSwitch, OnOff, Default, DefaultProps } from './types';
 
 export enum SwitchTypes {
   'on-off',
@@ -14,22 +14,27 @@ interface SwitchTypesProps {
 
 export interface ToggleProps
   extends HTMLProps<HTMLInputElement>,
-    SwitchTypesProps {
+    SwitchTypesProps,
+    DefaultProps {
   className?: string;
 }
 
-const ToggleType = (type: SwitchTypes) => {
+const ToggleType = (type: SwitchTypes, props: ToggleProps): JSX.Element => {
   switch (type) {
     case SwitchTypes['toggle-theme']:
-      return <BulbSwitch />;
+      return <BulbSwitch {...props} />;
     case SwitchTypes['on-off']:
-      return <OnOff />;
+      return <OnOff {...props} />;
     case SwitchTypes.default:
     default:
-      return <Default />;
+      return <Default {...props} />;
   }
 };
 
 export const Toggle: FC<ToggleProps> = props => {
-  return <div className={styles['toggle']}>{ToggleType(props.switchType)}</div>;
+  return (
+    <div className={styles['toggle']}>
+      {ToggleType(props.switchType, props)}
+    </div>
+  );
 };

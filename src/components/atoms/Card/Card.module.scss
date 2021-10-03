@@ -1,10 +1,10 @@
 @use '../../../styles' as *;
 
 .card {
-  margin: rem(10px);
+  // margin: rem(10px);
+  // padding: rem(10px);
   border-radius: rem(10px);
   box-shadow: rem(0) rem(4) rem(4) rgba($color: $clr-shade-07, $alpha: 0.5);
-  padding: rem(10px);
   border: rem(2) solid $clr-shade-05;
   background: $clr-shade-02;
 }

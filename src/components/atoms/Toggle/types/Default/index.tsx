@@ -4,15 +4,18 @@ import styles from './style.module.scss';
 export interface DefaultProps {
   disabled?: boolean;
   ban?: boolean;
+  handleClick?: () => void;
 }
 
 export const Default: FC<DefaultProps> = ({
   disabled = false,
   ban = false,
+  handleClick,
 }) => {
   const [toggle, setToggle] = useState(false);
-  const handleClick = () => {
+  const handleToggle = () => {
     setToggle(!toggle);
+    handleClick && handleClick();
   };
 
   const className = [
@@ -29,7 +32,7 @@ export const Default: FC<DefaultProps> = ({
         id={'check_box_default'}
         checked={toggle}
         disabled={disabled || ban}
-        onChange={handleClick}
+        onChange={handleToggle}
       />
       <label htmlFor={'check_box_default'} />
       {/* <span

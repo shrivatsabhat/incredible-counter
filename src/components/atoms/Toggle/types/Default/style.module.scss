@@ -44,6 +44,7 @@ $dark: rgb(0, 2, 128);
     &:before {
       content: '\f08d'; // pin icon
       content: '\f00d'; // cross mark
+      content: '\f068';
       font-family: 'FontAwesome-Solid';
       font-weight: normal;
       font-size: 24px;
@@ -78,6 +79,7 @@ $dark: rgb(0, 2, 128);
       &:after,
       &:before {
         content: '\f00c'; // tick (check)
+        content: '\f067';
         background: var(--right-thumb-color);
         color: var(--right-label-color);
         left: var(--toggle-swipe-width);
