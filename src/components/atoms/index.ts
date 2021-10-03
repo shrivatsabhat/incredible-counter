@@ -5,3 +5,4 @@ export * from './Circle';
 export * from './Toast';
 export * from './Image';
 export * from './Toggle';
+export * from './Slider';

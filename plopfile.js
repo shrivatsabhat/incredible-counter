@@ -1,5 +1,5 @@
 'use-strict';
-const Type = ['index', 'stories', 'style'];
+const Type = ['index', 'style'];
 
 const PascalCalse = word =>
   word.replace(/\w+/g, w => w[0].toUpperCase() + w.slice(1).toLowerCase());

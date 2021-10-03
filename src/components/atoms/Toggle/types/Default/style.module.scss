@@ -1,11 +1,21 @@
+@use '../../../../../styles/index' as *;
 $dark: rgb(0, 2, 128);
-
+// '\f08d'; // pin icon
+// '\f00d'; // cross mark
+// '\f00c'; // tick (check)
 .checkbox {
-  --container-width: 9rem;
-  --container-height: 4.2rem;
-  --button-radius: 5rem;
-  --toggle-swipe-width: 4rem;
-  --toggle-width: 10rem;
+  --uncheck-icon: '\f068 ';
+  --check-icon: '\f067';
+  --lock-icon: '\f023';
+  --ban-icon: '\f05e';
+
+  --container-width: 6rem;
+  --container-height: calc(var(--container-width) * 0.472);
+  --button-radius: calc(
+    var(--container-width) - var(--container-height) + 0.2rem
+  );
+  --toggle-swipe-width: calc(var(--container-height) - 0.2rem);
+  --toggle-width: calc(var(--container-width) + 0.1rem);
 
   --left-track-color: hsl(0, 100%, 85%);
   --right-track-color: hsl(150, 100%, 25%);
@@ -26,28 +36,26 @@ $dark: rgb(0, 2, 128);
     display: inline-block;
     border-radius: var(--button-radius);
     transition: all 0.25s;
-    box-shadow: inset 0 3px 3px hsla(150, 100%, 0%, 0.25);
+    box-shadow: inset 0 rem(3px) rem(3px) hsla(150, 100%, 0%, 0.25);
     &:after,
     &:before {
       content: '';
-      text-shadow: 0px 0px 2px hsla(0, 0%, 0%, 0.25);
+      text-shadow: rem(0px) rem(0px) rem(2px) hsla(0, 0%, 0%, 0.25);
       position: absolute;
       width: var(--button-radius);
       height: var(--button-radius);
       border-radius: 100%;
       left: 0;
-      top: -5px;
+      top: rem(-5px);
       background: var(--left-thumb-color);
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 rem(5px) rgba(0, 0, 0, 0.2);
       transition: all 0.25s;
     }
     &:before {
-      content: '\f08d'; // pin icon
-      content: '\f00d'; // cross mark
-      content: '\f068';
+      content: var(--uncheck-icon);
       font-family: 'FontAwesome-Solid';
       font-weight: normal;
-      font-size: 24px;
+      font-size: x-large;
       line-height: var(--button-radius);
       color: var(--left-label-color);
       z-index: 1;
@@ -71,18 +79,18 @@ $dark: rgb(0, 2, 128);
       color: blue;
     }
     &:not(:disabled):hover + label:after {
-      box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2),
-        0 3px 8px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 rem(2px) rem(15px) 0 rgba(0, 0, 0, 0.2),
+        0 rem(3px) rem(8px) 0 rgba(0, 0, 0, 0.15);
     }
     &:checked + label {
       background: var(--right-track-color);
       &:after,
       &:before {
-        content: '\f00c'; // tick (check)
-        content: '\f067';
+        content: var(--check-icon);
         background: var(--right-thumb-color);
         color: var(--right-label-color);
         left: var(--toggle-swipe-width);
+        font-size: x-large;
       }
       &:before {
         animation: 0.25s pin-on forwards;
@@ -108,21 +116,21 @@ $dark: rgb(0, 2, 128);
   width: var(--toggle-width);
 }
 .checkbox.disabled::after {
-  content: '\f023';
+  content: var(--lock-icon);
   position: absolute;
-  top: 10px;
-  left: 66px;
+  top: rem(10px);
+  left: rem(66px);
   font-family: 'FontAwesome-Solid';
-  font-size: 18px;
+  font-size: rem(18px);
   color: hsla(0, 0%, 0%, 0.5);
-  text-shadow: 0px 1px 1px hsla(0, 0%, 0%, 0.25);
+  text-shadow: 0px rem(1px) rem(1px) hsla(0, 0%, 0%, 0.25);
 }
 // OR this version!
 .checkbox.ban.disabled::after {
-  content: '\f05e';
+  content: var(--ban-icon);
 }
 .checkbox.disabled.checked::after {
-  left: 24px;
+  left: rem(24px);
   color: hsla(0, 0%, 100%, 0.75);
 }
 .disabled {
@@ -132,7 +140,7 @@ $dark: rgb(0, 2, 128);
 }
 small {
   display: block;
-  font-size: 12px;
+  font-size: rem(12px);
   font-weight: normal;
 }
 // .indicators {
