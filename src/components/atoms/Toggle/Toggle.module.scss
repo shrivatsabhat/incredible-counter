@@ -1,3 +1,5 @@
+@use '../../../styles/mixins/class' as *;
 .toggle {
   position: relative;
+  @include disableBlueHightlight();
 }

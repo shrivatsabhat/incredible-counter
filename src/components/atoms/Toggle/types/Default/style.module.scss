@@ -97,6 +97,7 @@ $dark: rgb(0, 2, 128);
       }
     }
   }
+  @include disableBlueHightlight();
 }
 /*
 @include keyframes(pin-on){

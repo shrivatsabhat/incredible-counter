@@ -9,7 +9,7 @@ export const About = (): JSX.Element => {
       <Navbar />
 
       <h1>About</h1>
-      <Dropdown data={[{ key: 1, payload: 'one' }]} />
+      {/* <Dropdown data={[{ key: 1, payload: 'one' }]} /> */}
       <Toggle switchType={SwitchTypes['toggle-theme']} checked={true} />
       <hr />
       <Toggle switchType={SwitchTypes['on-off']} checked={true} />
