@@ -16,3 +16,8 @@
 @function rem($pixels, $context: font.$html-font-size) {
   @return (math.div(stripUnit($pixels), stripUnit($context))) * 1rem;
 }
+
+//  strip units helper function
+@function num($input) {
+  @return math.div($input, ($input * 0 + 1));
+}

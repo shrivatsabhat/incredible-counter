@@ -1,3 +1,7 @@
+//  default font scale bounding
+$font-lock-min: 400px !default;
+$font-lock-max: 1000px !default;
+
 // TYPOGRAPY
 $html-font-size: 16px;
 
@@ -5,6 +9,7 @@ $fonts-size-S: 1.25rem;
 $fonts-size-M: 1.6rem;
 $fonts-size-L: 2rem;
 $fonts-size-XL: 3rem;
+$fonts-size-XXXL: 10rem;
 $fonts-size-XXXXL: 16rem;
 
 $letter-space-M: 0.15rem;

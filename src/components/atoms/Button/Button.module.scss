@@ -8,6 +8,7 @@
   width: 100%;
   border-radius: rem(10px);
   font-size: $fonts-size-XXXXL;
+  @include font-size($fonts-size-XXXL, $fonts-size-XXXXL);
   cursor: pointer;
   &:focus {
     outline-color: $clr-shade-05;

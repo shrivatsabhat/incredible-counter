@@ -6,3 +6,4 @@ export * from './Toast';
 export * from './Image';
 export * from './Toggle';
 export * from './Slider';
+export * from './Numberblock';
