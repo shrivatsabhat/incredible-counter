@@ -1,0 +1,50 @@
+@use '../../../styles/index' as *;
+.dd-menu {
+  position: relative;
+  width: 100%;
+  max-height: rem(200px);
+  display: flex;
+  flex-direction: column;
+  gap: rem(10px);
+}
+
+.dd-tab {
+  position: relative;
+  width: 100%;
+  height: rem(24px);
+  border-radius: rem(12px);
+  background: $clr-shade-05;
+  color: $clr-shade-16;
+  cursor: pointer;
+  &:hover {
+    background: $clr-shade-03;
+  }
+}
+
+.arrow {
+  --size: 0.5em;
+  --color: $clr-shade-17;
+  position: relative;
+  width: calc(var(--size) * 4);
+  height: calc(var(--size) * 4);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--size) * 3);
+    height: var(--size);
+    background: var(--color);
+    border-radius: 50px;
+  }
+
+  &::before {
+    transform: translate(-50%, 20%) rotate(-45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -120%) rotate(45deg);
+  }
+}
