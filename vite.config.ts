@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, searchForWorkspaceRoot } from 'vite';
 import reactRefresh from '@vitejs/plugin-react-refresh';
 import { resolve } from 'path';
 
@@ -9,7 +9,7 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, './src'),
       '@atoms': resolve(__dirname, './src/components/atoms'),
-      '@molecules': resolve(__dirname, './molecules/components/container'),
+      '@molecules': resolve(__dirname, './src/components/molecules'),
       '@organisms': resolve(__dirname, './src/components/organisms'),
       '@container': resolve(__dirname, './src/container'),
       '@assets': resolve(__dirname, './src/assets'),
@@ -21,7 +21,13 @@ export default defineConfig({
   server: {
     fs: {
       // Allow serving files from one level up to the project root
-      allow: ['./src', './src/**'],
+      allow: [
+        '..',
+        './src',
+        './src/**',
+        // search up for workspace root
+        searchForWorkspaceRoot(process.cwd()),
+      ],
     },
   },
 });

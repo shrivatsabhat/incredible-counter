@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;700;800;900&family=Montserrat:wght@400;500;700&display=swap');
+@import './fonts/FontAwesome/fontAwesome.css';
 
 :root {
   font-size: 10px;
@@ -11,9 +12,9 @@
 
 body {
   margin: 0;
-  font-family: 'Encode Sans', 'Montserrat', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Encode Sans', 'Montserrat', 'FontAwesome', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

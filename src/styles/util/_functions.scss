@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 @use '../variables/font' as font;
 
 // Source: https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
@@ -15,4 +15,9 @@
 //     or font-size: rem(14);
 @function rem($pixels, $context: font.$html-font-size) {
   @return (math.div(stripUnit($pixels), stripUnit($context))) * 1rem;
+}
+
+//  strip units helper function
+@function num($input) {
+  @return math.div($input, ($input * 0 + 1));
 }

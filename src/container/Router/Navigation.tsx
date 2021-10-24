@@ -3,12 +3,15 @@ import { routes } from './Route';
 import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import classes from './styles.module.scss';
+import Types from '../../Types';
 
-export function Nav(): JSX.Element {
+export function Navbar(): JSX.Element {
   return (
     <Card className={classes.container}>
       <span>
-        <Text type="p">Counter</Text>
+        <Link to={'/'}>
+          <Text type="p">{Types.Header.logo}</Text>
+        </Link>
       </span>
       {routes.map(route => (
         <span key={route.id}>
