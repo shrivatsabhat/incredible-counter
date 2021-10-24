@@ -1,5 +1,5 @@
 import React, { FC, MouseEventHandler } from 'react';
-import styles from './NumberBlock.module.scss';
+import styles from './Numberblock.module.scss';
 import { Icon } from '@assets';
 
 export interface NumberBlockProps {
