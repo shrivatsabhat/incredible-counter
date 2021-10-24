@@ -9,15 +9,6 @@ export const About = (): JSX.Element => {
       <Navbar />
 
       <h1>About</h1>
-      <NumberBlock />
-      {/* <Dropdown data={[{ key: 1, payload: 'one' }]} /> */}
-      <Toggle switchType={SwitchTypes['toggle-theme']} checked={true} />
-      <hr />
-      <Toggle switchType={SwitchTypes['on-off']} checked={true} />
-      <hr />
-      <Toggle switchType={SwitchTypes['default']} checked={true} />
-      <hr />
-      <Slider />
     </Fragment>
   );
 };
