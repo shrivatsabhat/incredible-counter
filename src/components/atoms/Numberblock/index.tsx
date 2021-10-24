@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler } from 'react';
+import React, { FC } from 'react';
 import styles from './Numberblock.module.scss';
 import { Icon } from '@assets';
 
