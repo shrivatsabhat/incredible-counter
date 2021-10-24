@@ -7,7 +7,7 @@ import React, {
   useState,
 } from 'react';
 import { Card, SwitchTypes, Text, Toggle } from '@atoms';
-import { NumberBlock } from '../../components/atoms/Numberblock/index';
+import { NumberBlock } from '@molecules';
 import { useStore } from '@container';
 import { TYPE, COUNTER_TYPE } from '@helper';
 import clasess from './Home.module.scss';
@@ -40,6 +40,8 @@ export const Home: FC = () => {
   };
 
   const handleDelay = (evt: ChangeEvent<HTMLInputElement>) => {
+    console.log(evt.target.value);
+
     store(TYPE.DATA.DELAY, evt.target.value);
   };
 
@@ -73,7 +75,7 @@ export const Home: FC = () => {
         {data.autoCounter ? (
           <Fragment>
             <Card className={clasess['action-control']}>
-              <Text type="label" htmlFor="delay">
+              {/* <Text type="label" htmlFor="delay">
                 Delay Time: {data.delay / 1000}
               </Text>
               <input
@@ -84,8 +86,12 @@ export const Home: FC = () => {
                 step={String(data.range.step)}
                 onChange={handleDelay}
                 value={data.delay}
+              /> */}
+              <NumberBlock
+                label={'Delay Time (ms)'}
+                value={data.delay}
+                onChange={handleDelay}
               />
-              <NumberBlock value={134} />
             </Card>
             <Card className={clasess['action-btn']}>
               <ActionButton onClick={handleAutoState} ref={ref}>

@@ -1,4 +1,4 @@
-import { Card, Text } from '@atoms';
+import { Button, Card, Text } from '@atoms';
 import { Navbar, useStore } from '@container';
 import { TYPE } from '@helper';
 import React, { ChangeEvent, FC } from 'react';
@@ -36,7 +36,9 @@ export const Menu: FC = () => {
       <Navbar />
 
       <Card className={classes.autoCounter}>
-        <button onClick={handleClick}>Auto Counter</button>
+        <Button className={classes.button} onClick={handleClick}>
+          {data.autoCounter ? 'Auto Counter' : 'Manual Counter'}
+        </Button>
         <div>
           <Text type="label">Min value</Text>
           <input
