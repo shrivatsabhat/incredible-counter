@@ -2,6 +2,10 @@ import { CenteralStore } from './Store';
 import { useContext } from 'react';
 import { _hardStore, _state, _store } from './_data';
 
+/**
+ *
+ * @returns array of context,store, masterStore
+ */
 export const useStore = (): [
   typeof _state,
   typeof _store,
